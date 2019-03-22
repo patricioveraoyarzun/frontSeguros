@@ -1,0 +1,23 @@
+/* Modal Salir */
+#modalSalir .mx-auto {
+  color: #C4C2C2;
+  font-size: 1.25rem;
+  padding: 50px 0 30px 0;
+  margin-left: 0!important;
+  margin-right: 0!important;
+  text-align: center;
+  border-bottom: 1px solid #C4C2C2;
+}
+#modalSalir #btnSalir {
+  color: #CA195B;
+  text-transform: none;
+  margin-bottom: 0;
+}
+#modalSalir #btnCancelar {
+  color: #C4C2C2;
+  text-transform: none;
+  margin-bottom: 0;
+}
+#modalSalir .separador {
+  border-bottom: 1px solid #C4C2C2;
+}

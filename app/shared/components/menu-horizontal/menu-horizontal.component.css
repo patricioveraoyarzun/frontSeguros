@@ -1,0 +1,75 @@
+/*Menu horizontal*/
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  padding: 15px;
+  padding-left: 5px;
+}
+nav ul a:hover {
+  text-decoration: none;
+}
+.menu-horizontal ul {
+  display: flex;
+  justify-content: flex-end;
+}
+.menu-horizontal ul li {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+.menu-horizontal img {
+  width: 65%;
+}
+.menu-horizontal ul li a{
+  margin-bottom: 0;
+}
+
+.rojo {
+  color: #CA195B;
+}
+
+.gris {
+  color: #C4C2C2;
+}
+
+
+#modalSalir .mx-auto {
+  color: #C4C2C2;
+  font-size: 1.25rem;
+  padding: 50px 0 30px 0;
+  margin-left: 0!important;
+  margin-right: 0!important;
+  text-align: center;
+  border-bottom: 1px solid #C4C2C2;
+}
+#modalSalir #btnSalir {
+  color: #CA195B;
+  text-transform: none;
+  margin-bottom: 0;
+}
+#modalSalir #btnCancelar {
+  color: #C4C2C2;
+  text-transform: none;
+  margin-bottom: 0;
+}
+#modalSalir .separador {
+  border-bottom: 1px solid #C4C2C2;
+}
+
+
+/**
+* Mobile y pequeñas tablets
+*/
+@media (max-width: 768px) {
+  /*@media (max-width: 414px) {*/
+    .menu-horizontal ul li {
+        padding: 0 7px;
+    }
+    .menu-horizontal ul li:last-child {
+        padding-right: 0;
+    }
+
+  }
