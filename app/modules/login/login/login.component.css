@@ -1,0 +1,151 @@
+
+/****************************************************************************/
+body {
+  font-family: IsidoraSans-Regular !important;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:after, *:before {
+  box-sizing: inherit;
+}
+
+.texto {
+  color: #939292;
+  font-size: 1rem!important;
+}
+
+.fucsia {
+  color: #CA195B;
+}
+
+.gris {
+  color: #939292;
+}
+
+.grisFondo {
+  background: #FCFCFC;
+}
+
+.imgLogo {
+  max-width: 180px;
+}
+
+.btnIngresar {
+  color: #CA195B;
+  border: 1px solid #CA195B;
+  text-transform: none;
+}
+.btnIngresar:hover {
+  color: #FFFFFF;
+  background: #CA195B;
+}
+
+.btnCrearCuenta {
+  color: #FFFFFF;
+  background: #939292;
+  text-transform: none;
+}
+.btnCrearCuenta:hover {
+  color: #FFFFFF;
+  background: #CA195B;
+}
+
+.login {
+  width: 400px;
+  //margin: 0 auto;
+}
+.login figure {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.txtRecuperalaAhora {
+  color: #939292!important;
+  font-family: IsidoraSans-SemiBold;
+}
+
+.txtRecuperalaAhora:hover {
+  text-decoration: none;
+}
+
+/*Texto centrado del tab con igual ancho*/
+.nav-item {
+  width: 50%;
+  text-align: center;
+}
+.nav-item a {
+  text-transform: none!important;
+  font-family: IsidoraSans-SemiBold;
+  font-size: 1rem!important;
+  padding: 0!important;
+  //border-bottom: none!important;
+  border-bottom: .214rem solid transparent!important;
+}
+
+.active a {
+  color: #CA195B!important;
+}
+
+/*Linea inferior del texto del tab activo*/
+.nav-item.active {
+  border-bottom: 1px solid #CA195B!important;
+}
+
+
+
+/*****************************************************/
+/* Valores por defecto del Bootstrap Material Design */
+/*****************************************************/
+
+/*Color del fondo del checkbox tildado por defecto "#009688"*/
+span .check::before {
+  color: #CA195B!important;
+}
+
+/*Color del borde del checkbox tildado por defecto "#009688"*/
+.checkbox label input[type=checkbox]:checked+.checkbox-decorator .check, label.checkbox-inline input[type=checkbox]:checked+.checkbox-decorator .check {
+  border-color: #CA195B!important;
+}
+
+/*Texto del checkbox por defecto "rgba(0,0,0,.26)"*/
+.checkbox label {
+  color: #939292;
+}
+.checkbox label:hover {
+  //color: orange !important;
+}
+
+/*Espacio entre la linea del input y el elemnto de abajo por defecto "1rem"*/
+.form-group {
+  margin-bottom: 1.75rem;
+}
+
+/*Espacio entre el label y la linea del input por defecto "1.75rem"*/
+.bmd-form-group {
+  padding-top: 2.1rem;
+}
+
+/*Color del label al recibir el input el foco por defecto es verde*/
+.form-group.is-focused label {
+  color: #CA195B;
+}
+
+/**
+* Mobile y pequeñas tablets
+*/
+@media (max-width: 768px) {
+/*@media (max-width: 414px) {*/
+
+
+}
+

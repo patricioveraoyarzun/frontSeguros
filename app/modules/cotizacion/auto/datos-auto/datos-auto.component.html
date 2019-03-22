@@ -1,0 +1,81 @@
+<body class="fondoGris">
+
+
+  <header class="container-fluid">
+      <div class="logo"><img src="assets/images/logo.png" class="img-fluid"></div>
+
+     <app-menu-horizontal></app-menu-horizontal>
+  </header>
+
+
+  <!-- ------------ Principal ------------ -->
+  <div class="principal">
+
+      <app-menu-vertical></app-menu-vertical>
+
+      <!-- ------------ Tarjetas ------------ -->
+      <div class="container">
+        <h1 class="negrita rojo">Cotiza tu Seguro Automotriz</h1>
+        <span class="h1 rojo">en tres simples pasos.</span>
+        <div class="wizard">
+          <div class="wizard-elemento rojo">DATOS DEL AUTO</div>
+          <div class="wizard-elemento gris">DATOS DEL ASEGURADO</div>
+          <div class="wizard-elemento gris">OBTENER OFERTAS</div>
+        </div>
+
+        <ul class="progressbar">
+          <li class="active"></li>
+          <li class=""></li>
+          <li class=""></li>
+        </ul>
+
+
+        <div class="auto tarjeta">
+          <form class="mt-3" [formGroup]="form">
+            <h4 class="mb-3 rojo">Sobre el auto que quieres asegurar...</h4>
+            <div class="form-row">
+              <div class="my-1 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <label class="mr-sm-2" for="slMarca">Marca</label>
+                <select formControlName="marcas" class="custom-select mr-sm-2" id="slMarca" required (change)="onChangeMarcasAutos($event.target.value)">
+                  <option [value]="0">Seleccionar...</option>
+                  <option *ngFor="let marcas of marcasAuto" [value]="marcas.id">{{marcas.nombre}}</option>
+                </select>
+                <div *ngIf="isControlInvalid('marcas')" class="mps-invalid-feedback">
+                  Por favor ingrese selecione Marca
+                </div>
+              </div>
+              <div class="my-1 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <label class="mr-sm-2" for="slModelo">Modelo</label>
+                <select formControlName="modelos" class="custom-select mr-sm-2" id="slModelo" required>
+                  <option [value]="0">Seleccionar...</option>
+                  <option *ngFor="let modelo of modelosAuto" [value]="modelo.id">{{modelo.nombre}}</option>
+                </select>
+                <div *ngIf="isControlInvalid('modelos')" class="mps-invalid-feedback">
+                  Por favor ingrese selecione Modelo
+                </div>
+              </div>
+              <div class="my-1 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <label class="mr-sm-2" for="slAnio">Año</label>
+                <select formControlName="anios" class="custom-select mr-sm-2" id="slAnio" required>
+                  <option [value]="0">Seleccionar...</option>
+                  <option *ngFor="let anio of anios" [value]="anio.id">{{anio.nombre}}</option>
+                </select>
+                <div *ngIf="isControlInvalid('anios')" class="mps-invalid-feedback">
+                  Por favor ingrese selecione Año
+                </div>
+              </div>
+            </div>
+            <button type="button" class="btn btn-block btnRojo mt-5" (click)="navegar()">
+              Continuar
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+</div>
+
+
+<app-modal-salir></app-modal-salir>
+
+</body>

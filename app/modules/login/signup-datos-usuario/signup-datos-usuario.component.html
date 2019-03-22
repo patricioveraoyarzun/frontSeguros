@@ -1,0 +1,68 @@
+<body class="center">
+	<div class="margin-25">
+		<figure>
+			<img class="portalSeguroLogo" src="assets/images/iconosLogin/logo.png">
+		</figure>
+	</div>
+
+	<h3 class="rojo w-800 primero text-center">Ingresa tus datos de registros</h3>
+
+	<form class="signUp container" novalidate [formGroup]="formSignUp">
+    <div formGroupName="usuario">
+        <label class="gris">Tipo de usuario</label>
+
+        <div class="radio">
+          <label class="radioButton">
+            <input type="radio" name="optionsRadios1" id="optionsRadios1" value="option1" checked="">
+            Persona
+          </label>
+          <label class="radioButton">
+            <input type="radio" name="optionsRadios1" id="optionsRadios2" value="option2">
+            Empresa
+          </label>
+        </div>
+
+        <div class="row margin-25">
+          <div class="col-md-6">
+            <label class="gris margin-cero" for="rut">Rut</label>
+            <input type="text"  formControlName="rut" class="form-control padding-cero" id="inputRut">
+            <div *ngIf="isControlInvalid('usuario.rut')" class="mps-invalid-feedback">Por favor ingrese el Rut</div>
+          </div>
+          <div class="col-md-6">
+            <label class="gris" for="RazonSocial">Razón Social</label>
+            <input type="text"  formControlName="razonSocial" class="form-control padding-cero" id="inputRazonSocial">
+            <div *ngIf="isControlInvalid('usuario.razonSocial')" class="mps-invalid-feedback">Por favor ingrese la Razon Social</div>
+          </div>
+        </div>
+        <div class="row margin-25">
+          <div class="col-md-6">
+            <label class="gris margin-cero" for="Nombre">Nombre</label>
+            <input type="text" formControlName="nombre" class="form-control padding-cero" id="inputNombre">
+            <div *ngIf="isControlInvalid('usuario.nombre')" class="mps-invalid-feedback">Por favor ingrese el Nombre</div>
+          </div>
+          <div class="col-md-6">
+            <label class="gris margin-cero" for="Apellido">Apellido</label>
+            <input type="text" formControlName="apellido" class="form-control padding-cero" id="inputApellido">
+            <div *ngIf="isControlInvalid('usuario.apellido')" class="mps-invalid-feedback">Por favor ingrese el Apellido</div>
+          </div>
+        </div>
+        <div class="col padding-cero margin-25">
+          <label class="gris margin-cero" for="email">E-mail</label>
+          <input type="email" formControlName="email" class="form-control padding-cero" id="inputEmail">
+          <div *ngIf="isControlInvalid('usuario.email')" class="mps-invalid-feedback">Por favor ingrese el Email</div>
+        </div>
+        <div class="col padding-cero margin-25">
+          <label class="gris margin-cero" for="telefono">Teléfono</label>
+          <input type="text" formControlName="telefono" class="form-control padding-cero col-md-11" id="inputTelefono">
+          <div *ngIf="isControlInvalid('usuario.telefono')" class="mps-invalid-feedback">Por favor ingrese el Teléfono</div>
+
+        </div>
+
+    </div>
+		<p class="gris text-center margin-25"> <img src="assets/images/candado.png"> Recibirás un código de verificación por e-mail</p>
+
+		<button class="btn btn-lg btn-block btnIngresar my-3" type="button" (click)="onSubmit()">Ingresar</button>
+
+		<p class="gris text-center">¿Ya tienes cuenta? <b><a href="#" class="gris" (click)="login()">Ingresa ahora</a></b></p>
+	</form>
+</body>

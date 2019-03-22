@@ -1,0 +1,203 @@
+<body class="fondoGris">
+
+
+  <header class="container-fluid dashboard-mps">
+    <div class="logo"><img src="assets/images/logo.png" class="img-fluid"></div>
+
+    <app-menu-horizontal></app-menu-horizontal>
+  </header>
+
+
+  <!-- ------------ Principal ------------ -->
+  <div class="principal dashboard-mps">
+
+    <!-- ------------ Menu lateral ------------ -->
+
+    <app-menu-vertical></app-menu-vertical>
+
+    <!-- ------------ Tarjetas ------------ -->
+    <article class="">
+
+      <div class="container mensaje">
+        <h1 class="negrita rojo">ingresa tu información</h1>
+      </div>
+
+      <!-- ------------ Formulario ------------ -->
+
+      <div class="container">
+        <div class="cajon1">
+          <div class="auto tarjeta">
+            <form class="mt-3" action="tercera.html" novalidate>
+              <h3 class="rojo primero">Sobre el auto que quieres asegurar...</h3>
+
+              <p class="parrafoFormulario">¿Tu vehículo está prendado por alguna financiera?</p>
+
+              <div class="radio">
+                <label class="radioButton">
+                  <input type="radio" name="optionsRadios1" id="optionsRadios1" value="option1" checked="">
+                  Si
+                </label>
+                <label class="radioButton">
+                  <input type="radio" name="optionsRadios1" id="optionsRadios2" value="option2">
+                  no
+                </label>
+              </div>
+
+              <div class="row">
+                <div class="col">
+                  <label for="Patente">Patente</label>
+                  <input type="text" class="form-control cajita" id="Patente" placeholder="abc123">
+                </div>
+                <div class="col">
+                  <label for="Motor">Motor</label>
+                  <input type="text" class="form-control cajita" id="Motor" placeholder="aa222">
+                </div>
+                <div class="col">
+                  <label for="Chasis">Chasis</label>
+                  <input type="text" class="form-control cajita" id="Chasis" placeholder="123">
+                </div>
+              </div>
+
+              <h3 class="rojo">Condición de tu vehículo</h3>
+
+              <p class="parrafoFormulario">Tu vehículo es...</p>
+
+              <div class="radio spaceAround">
+                <label class="radioButton">
+                  <input type="radio" name="optionsRadios2" id="optionsRadios3" value="option1" checked="">
+                  Nuevo, cero kilómetro
+                </label>
+                <label class="radioButton">
+                  <input type="radio" name="optionsRadios2" id="optionsRadios4" value="option2">
+                  Usádo
+                </label>
+              </div>
+
+              <h3 class="rojo">Condición de tu vehículo</h3>
+
+              <div class="row">
+                <div class="col">
+                  <label for="fechaFactura">Fecha de Factura/Guía</label>
+                  <input type="text" class="form-control cajita" id="fechaFactura" placeholder="21/02/2019">
+                </div>
+                <div class="col">
+                  <label for="numeroFactura">Numero de Factura/Guía</label>
+                  <input type="text" class="form-control cajita" id="numeroFactura" placeholder="123">
+                </div>
+              </div>
+
+              <div class="row adjFactura">
+                <div class="col-4">
+                  <p class="parrafoFormulario">Adjunto Factura/Guía</p>
+                </div>
+                <div class="col-8">
+                  <div class="row">
+                    <button type="button" class="btn btn-secondary btn-lg">Seleccionar archivo</button>
+                    <p class="gris detalleBoton">Ningún archivo seleccionado</p>
+                  </div>
+                  <p class="gris">Formato admitido PDF</p>
+                  <p class="rojo negrita">*Por favor, suba la factura o guía</p>
+                  <button type="button" (click)="volver()" class="btn btn-block btnGris uppercase">volver</button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+        </div>
+        <div class="cajon2">
+
+                          <div class="auto tarjeta">
+                            <form class="mt-3" action="tercera.html" novalidate>
+                              <h3 class="rojo primero">Sobre el dueño del auto</h3>
+
+                              <div class="row remOnBottom">
+                                <div class="col">
+                                  <label for="RUT">RUT</label>
+                                  <input type="text" class="form-control cajita" id="RUT" placeholder="123456789">
+                                </div>
+                                <div class="col">
+                                  <label for="Nombres">Nombres</label>
+                                  <input type="text" class="form-control cajita" id="Nombres" placeholder="Ramiro">
+                                </div>
+                              </div>
+                              <div class="row remOnBottom">
+                                <div class="col">
+                                  <label for="ApellidoPaterno">Apellodo Paterno</label>
+                                  <input type="text" class="form-control cajita" id="ApellidoPaterno" placeholder="Ramiro">
+                                </div>
+                                <div class="col">
+                                  <label for="ApellidoMaterno">Apellodo Materno</label>
+                                  <input type="text" class="form-control cajita" id="ApellidoMaterno" placeholder="Gallo">
+                                </div>
+                              </div>
+                              <div class="row remOnBottom">
+                                <div class="col">
+                                  <label for="Direccion">Dirección</label>
+                                  <input type="text" class="form-control cajita" id="Direccion" placeholder="asd 123">
+                                </div>
+                                <div class="col">
+                                  <label for="Celular">Celular</label>
+                                  <input type="text" class="form-control cajita" id="Celular" placeholder="1234567">
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col">
+                                  <label for="Correo">Correo</label>
+                                  <input type="text" class="form-control cajita" id="Correo" placeholder="asd@gmail.com">
+                                </div>
+                                <div class="col">
+                                  <label class="mr-sm-2" for="Comuna">Comuna</label>
+                                  <select class="custom-select mr-sm-2" id="Comuna" required>
+                                    <option selected>Choose...</option>
+                                    <option value="1">Santiago</option>
+                                    <option value="2">Opcion2</option>
+                                    <option value="3">Opcion3</option>
+                                  </select>
+                                </div>
+                              </div>
+
+                              <h3 class="rojo">Pagador del seguro</h3>
+
+                              <p class="parrafoFormulario">¿El pagador del seguro es también el propietario?</p>
+
+                              <div class="radio">
+                                <label class="radioButton">
+                                  <input type="radio" name="optionsRadios1" id="optionsRadios1" value="option1" checked=""> Si
+                                </label>
+                                <label class="radioButton">
+                                  <input type="radio" name="optionsRadios1" id="optionsRadios2" value="option2"> no
+                                </label>
+                              </div>
+
+                              <h3 class="rojo">Forma de pago</h3>
+
+                              <p class="parrafoFormulario">Forma de pago del seguro</p>
+
+                              <div class="radio spaceAround">
+                                <label class="radioButton">
+                                  <input type="radio" name="optionsRadios2" id="optionsRadios3" value="option3" checked=""> Contado
+                                </label>
+                                <label class="radioButton">
+                                  <input type="radio" name="optionsRadios2" id="optionsRadios4" value="option4"> PAT
+                                </label>
+                                <label class="radioButton">
+                                  <input type="radio" name="optionsRadios2" id="optionsRadios5" value="option5"> Aviso de vencimiento
+                                </label>
+                              </div>
+
+
+                              <button type="button" (click)="onSubmit()" class="btn btn-block btnRojo mt-5 uppercase">siguiente</button>
+
+                            </form>
+                          </div>
+
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+
+  <app-modal-salir></app-modal-salir>
+
+</body>

@@ -1,0 +1,714 @@
+
+/****************************************************************************/
+body {
+  font-family: IsidoraSans-Regular !important;
+/*    background: #FCFCFC;*/
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.fondoGris {
+  background: #FCFCFC;
+}
+
+.principal {
+  display: flex;
+  flex: 1;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:after, *:before {
+  box-sizing: inherit;
+}
+
+header {
+  background: #ffffff;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(221,221,221,0.7);
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+aside {
+  padding-top: 5rem;
+  background: #626161;
+  width: 70px;
+  height: 100%;
+}
+
+.logo {
+  padding-left: 15px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.logo img {
+  width: 120px;
+}
+.icono {
+  min-width: 30px;
+  text-align: center;
+}
+.icono img {
+  max-height: 27px;
+}
+
+.texto {
+  color: #C4C2C2;
+  font-size: 1.2rem;
+}
+
+/*Menu horizontal*/
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  padding: 15px;
+  padding-left: 5px;
+}
+nav ul a:hover {
+  text-decoration: none;
+}
+.menu-horizontal ul {
+  display: flex;
+  justify-content: flex-end;
+}
+.menu-horizontal ul li {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+.menu-horizontal img {
+  width: 65%;
+}
+.menu-horizontal ul li a{
+  margin-bottom: 0;
+}
+
+.menu-vertical ul li a {
+  display: flex;
+  justify-content: space-between;
+  width: 60px;
+  padding: 10px 25px 10px 15px;
+  border-radius: 10px;
+  position: relative;
+}
+.menu-vertical .texto {
+  display: none;
+  color: #000000;
+  position: absolute;
+  left: 55px;
+  font-family: IsidoraSans-Medium;
+}
+
+.menu-vertical ul li a:hover{
+  background: #CA195B;
+  width: 150px;
+}
+
+.rojo {
+  color: #CA195B;
+}
+
+.gris {
+  color: #C4C2C2;
+}
+/*------------------------------------------------------------------------------------*/
+
+/**
+* Mobile y pequeñas tablets
+*/
+@media (max-width: 768px) {
+/*@media (max-width: 414px) {*/
+  .logo {
+      padding-left: 0;
+  }
+  .menu-horizontal ul li {
+      padding: 0 7px;
+  }
+  .menu-horizontal ul li:last-child {
+      padding-right: 0;
+  }
+
+  .container {
+      padding-left: 0;
+      padding-right: 0;
+  }
+
+  aside {
+      padding-top: 2rem;
+  }
+
+}
+
+
+
+/****************************************************************************/
+body {
+  font-family: IsidoraSans-Medium !important;
+  background: #FCFCFC;
+}
+
+article header {
+  background-color: #ffffff;
+  border-bottom: 1px solid rgba(221,221,221,0.7);
+  position: relative;
+}
+
+.wizard {
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.wizard-elemento {
+  flex: 1;
+  text-align: center;
+  align-self: center;
+  align-self: flex-end;
+}
+
+.mensaje {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+
+.negrita {
+  font-family: IsidoraSans-Bold !important;
+}
+
+.rojo {
+  color: #CA195B;
+}
+
+.gris {
+  color: #999999;
+}
+
+.auto {
+  background: #ffffff;
+  margin-bottom: 2rem!important;
+}
+
+.container {
+  max-width: 800px;
+}
+
+.tarjeta {
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1);
+  padding: 50px 70px 30px 70px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.auto .custom-select {
+  color: #999999;
+  background-image: none;
+  border-color: #999999;
+}
+
+.btnRojo {
+  background-color: #CA195B;
+  color: #ffffff;
+  //height: 41px;
+  font-size: 1rem;
+}
+
+
+/*-----------------------------------------------------------------------*/
+.progressbar {
+counter-reset: step;
+  padding: 0;
+}
+.progressbar li{
+  list-style-type: none;
+  float: left;
+  width: 33.33%;
+  position: relative;
+  text-align: center;
+  //font-weight: 600;
+  //bottom: -11px;
+  bottom: -0.6875rem;  /*IMPORTANTE UNIDAD EN REM PARA QUE NO BAJE LA LINEA DE PROGRESS*/
+}
+.progressbar li:before {
+/* CSS for creating steper block before the li item*/
+  //content: counter(step);
+  content: '';
+  counter-increment: step;
+  height: 11px;
+  width: 11px;
+  line-height: 30px;
+  border: 2px solid #ddd;
+  display: block;
+  text-align: center;
+  margin: 0 auto 10px auto;
+  border-radius: 50%;
+  background-color: #ddd;
+}
+.progressbar li:after {
+/* CSS for creating horizontal line*/
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #ddd;
+  top: 5px;
+  left: -50%;
+  //z-index: -1;
+}
+.progressbar li:first-child:after {
+  content: none;
+}
+.progressbar li.active {
+  color: #CA195B;
+  z-index: 10;
+}
+.progressbar li.active:before {
+  border-color: #CA195B;
+  background-color: #CA195B;
+}
+.progressbar li.active:after{
+  background-color: #CA195B;
+}
+/*-----------------------------------------------------------------------*/
+
+
+/**
+* Mobile y pequeñas tablets
+*/
+@media (max-width: 768px) {
+/*@media (max-width: 414px) {*/
+
+  html {
+      font-size: 12px;
+  }
+
+  .mensaje {
+      //margin-top: 2rem;
+      //margin-bottom: 1rem;
+  }
+  .mensaje h1, .mensaje span {
+      padding-left: 1rem;
+      display: block;
+  }
+
+  .auto {
+      padding: 1.5rem 1rem;
+  }
+
+  .container {
+      padding-left: 0;
+      padding-right: 0;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Se establece la fuente y alto de línea */
+body {
+	font-family: 'isidora sans';
+	color: #212529;
+}
+
+
+/* color rosa de fuente de cabecera*/
+.tituloPrincipal p {
+	color: #CA195B;
+	font-size: 2.5rem;
+}
+
+/* fuente de letra negrita */
+.negrita {
+	font-family: 'isidora sans bold';
+}
+
+/* Color gris del texto */
+p, h1, a, .btn {
+	color: #999999;
+}
+
+/*********************
+
+  Sidebar
+
+*********************/
+
+.sidebar {
+	max-width: 320px;
+	margin: 0 20px;
+}
+
+/* Títulos*/
+.deducible {
+	padding-top: 3rem;
+}
+
+.deducible .pagination {
+	max-width: 280px;
+}
+/* Fuente y tamaño de los títulos */
+.card-body .card-title {
+	font-family: 'isidora sans semi bold';
+	font-size: 16px !important;
+}
+
+/* color rosa de los links */
+.page-link, .page-link:hover {
+ 	color: #CA195B;
+}
+
+/* Alineación de los tags */
+ .aseguradora label {
+ 	text-align: start;
+ 	padding-left: 10px;
+ }
+
+/* Propiedad para que los elementos no
+  se salgan del marger */
+
+.pagination {
+	flex-wrap: wrap;
+}
+
+/* Espaciado entre etiquetas */
+.cobertura {
+	justify-content: space-around;
+}
+
+.cobertura .btn {
+	padding: .46875rem .1rem;
+}
+
+/* Orden de los tags */
+.aseguradora {
+	flex-direction: column;
+	align-content: flex-start;
+	justify-content: flex-start;
+
+}
+
+.col-8.tarjetas {
+	padding: 0 2%;
+}
+
+.sidebar .card {
+	padding-left: 0px;
+	max-width: 308px;
+}
+
+.sidebar .card .card-body {
+	padding-bottom: 0;
+}
+
+/*********************
+
+  Fin Sidebar
+
+*********************/
+
+.btn {
+	font-size: 15px;
+	padding: 4px 18px;
+}
+
+/* Se acomodan los elementos en row */
+.wrapper{
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	width: 100%;
+}
+
+
+/******************
+  Tarjetas
+*******************/
+
+.card {
+	max-width: 780px;
+	font-size: 16px;
+	font-weight: 500;
+}
+
+/* Se ponen los elementos de la tarjeta en row */
+.tarjetas .card {
+	flex-direction: row;
+}
+
+.col-8.tarjetas {
+	max-width: 900px
+}
+
+/* Se fija un tamaño máximo de la barra */
+.progress{
+	max-width: 150px;
+	margin: 0 2px;
+}
+
+/* color rosa de la barra */
+.progress-bar {
+	background-color: #CA195B;
+}
+
+/* deficinion de los anchos máxinos y márgenes*/
+.card .imagen {
+	max-width: 250px;
+	margin: auto;
+}
+
+.card .detalles {
+	margin: auto;
+}
+
+.card .cuotas {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 250px;
+	margin: auto;
+
+}
+
+/* se ordenan los elementos de la tarjeta */
+.detallesWrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+
+.boton {
+	margin: 25px 0 0 6%;
+	color: #CA195B;
+	font-size: .7rem;
+}
+
+.cuotas .card-title {
+	font-size: 30px !important;
+}
+
+.cuotas .card-text{
+	margin-bottom: 0;
+}
+/* definicion del boton CONTRATAR */
+ .btn.btn-primary.text-uppercase  {
+	color: #FFF;
+	background-color: #CA195B;
+	font-family: 'isidora sans semi bold';
+}
+
+.btn.btn-primary.text-uppercase:focus, .btn.btn-primary.text-uppercase:hover {
+	color: #999;
+	background-color: hsla(0,0%,60%,.2);
+}
+
+.progress-bar {
+	width: 75%;
+}
+
+/*******************
+ Slider de precios
+********************/
+
+.slidecontainer {
+	width: 100%;
+}
+
+.slider{
+	-webkit-appearance: none;
+	appearance: none;
+	width:100%;
+	height: 5px;
+	background: #CA195B;
+	outline:none;
+	opacity: 0.7;
+	-webkit-transition:.2s;
+	transition: opacity .2s;
+	border-radius: 2.5px;
+}
+
+.slider:hover{
+	opacity: 1;
+}
+
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 4px solid #CA195B;
+}
+
+.slider::-moz-range-thumb{
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 4px solid #36AADD;
+}
+
+@media (max-width: 1160px) {
+	.detallesWrapper{
+		line-height: 1rem;
+	}
+
+	.sidebar {
+		max-width: 400px;
+		margin: 7px;
+	}
+
+
+	.tarjetas .card {
+		flex-direction: column;
+		max-width: 370px;
+		margin: 20px auto;
+	}
+
+	.card .detalles {
+		margin: 0;
+	}
+}
+
+@media (max-width: 890px) {
+	.wrapper {
+		flex-direction: column;
+	}
+
+
+	.tituloPrincipal p {
+		font-size: 1.2rem;
+		line-height: 1rem;
+	}
+
+	.wizard {
+		padding-top: 1.1rem;
+	}
+
+	.wizard .wizard-elemento {
+		font-size: 14px;
+		line-height: 1rem;
+	}
+
+	.tarjetas .card {
+		flex-direction: column;
+		max-width: 370px;
+		margin: 20px auto;
+	}
+
+	.coberturaMedia {
+		margin: 0 20px;
+	}
+
+	.col-4 {
+		padding-right: 0;
+		padding-left: 0;
+	}
+
+}
+
+@media (max-width: 320px) {
+	.col-4.sidebar .card {
+		margin-left: 64px;
+	}
+	.sidebar .card {
+		padding-left: 0;
+	}
+}
+
+.pagination input {
+    display: none;
+}
+
+/********************
+  DEDUCIBLES
+*********************/
+
+#deducible-0:checked + label {
+    color: #CA195B;
+}
+#deducible-3:checked + label {
+    color: #CA195B;
+}
+#deducible-5:checked + label {
+    color: #CA195B;
+}
+#deducible-6:checked + label {
+    color: #CA195B;
+}
+#deducible-7:checked + label {
+    color: #CA195B;
+}
+#deducible-10:checked + label {
+    color: #CA195B;
+}
+#deducible-12:checked + label {
+    color: #CA195B;
+}
+
+/********************
+  COBERTURAS
+*********************/
+
+#cobertura-basica:checked + label {
+    color: #CA195B;
+}
+#cobertura-media:checked + label {
+    color: #CA195B;
+}
+#cobertura-completa:checked + label {
+    color: #CA195B;
+}
+
+/********************
+  ASEGURADORAS
+*********************/
+
+#aseguradora-BCI:checked + label {
+    color: #CA195B;
+}
+#aseguradora-Cardif:checked + label {
+    color: #CA195B;
+}
+#aseguradora-Chilena:checked + label {
+    color: #CA195B;
+}
+#aseguradora-Consorcio:checked + label {
+    color: #CA195B;
+}
+#aseguradora-Liberty:checked + label {
+    color: #CA195B;
+}
+#aseguradora-Maprfre:checked + label {
+    color: #CA195B;
+}
+#aseguradora-Sura:checked + label {
+    color: #CA195B;
+}
+#aseguradora-Zenit:checked + label {
+    color: #CA195B;
+}
+

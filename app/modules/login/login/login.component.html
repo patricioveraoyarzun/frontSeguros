@@ -1,0 +1,46 @@
+
+ <div class="container">
+  <div class="login">
+      <figure class="text-center">
+          <img src="assets/images/iconosLogin/logo.png" alt="" class="imgLogo">
+      </figure>
+
+      <app-alertas></app-alertas>
+
+      <form novalidate [formGroup]="formLogin">
+          <div class="form-group">
+              <ul class="nav nav-tabs">
+                  <li class="nav-item active">
+                      <a class="nav-link" href="#">Personas</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Empresas</a>
+                  </li>
+              </ul>
+          </div>
+          <div formGroupName="usuario">
+              <div class="form-group">
+                  <label class="texto">Usuario</label>
+                  <input type="email" formControlName="username" type="text" class="form-control" id="inputUserName" required />
+                  <div *ngIf="isControlInvalid('usuario.username')" class="mps-invalid-feedback">Por favor ingrese el usuario</div>
+
+
+                </div>
+                <div class="form-group">
+                    <label class="texto">Contraseña</label>
+                    <input type="password" formControlName="password" class="form-control" id="inputPassword" required />
+                    <div *ngIf="isControlInvalid('usuario.password')" class="mps-invalid-feedback">Por favor ingrese el password</div>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" id="checkboxRecordarme" value=""> Recordarme
+                    </label>
+                </div>
+          </div>
+          <button class="btn btn-lg btn-block btnIngresar my-3" type="button" (click)="onSubmit()">Ingresar</button>
+          <button class="btn btn-lg btn-block btnCrearCuenta my-3" type="button" (click)="singnUp()">Crear cuenta</button>
+          <p class="texto text-center">¿Olvidó su contraseña? <a href="#" class="txtRecuperalaAhora">Recupérala ahora</a></p>
+          </form>
+
+  </div>
+</div>

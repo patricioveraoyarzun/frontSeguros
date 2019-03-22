@@ -1,0 +1,154 @@
+<body class="">
+
+
+  <header class="container-fluid dashboard-mps">
+     <div class="logo"><img src="assets/images/logo.png" class="img-fluid"></div>
+     <app-menu-horizontal></app-menu-horizontal>
+  </header>
+
+
+  <!-- ------------ Principal ------------ -->
+  <div class="principal dashboard-mps">
+
+      <!-- ------------ Menu lateral ------------ -->
+      <app-menu-vertical></app-menu-vertical>
+
+
+      <!-- ------------ body ------------ -->
+      <article class="">
+
+        <!-- ------------ wizard ------------ -->
+
+          <header class="container-fluid">
+              <div class="container">
+                  <div class="wizard">
+                      <div class="wizard-elemento rojo">DATOS DEL AUTO</div>
+                      <div class="wizard-elemento gris">DATOS DEL ASEGURADO</div>
+                      <div class="wizard-elemento gris">OBTENER OFERTAS</div>
+                  </div>
+
+                  <ul class="progressbar">
+                      <li class="active"></li>
+                      <li class=""></li>
+                      <li class=""></li>
+                  </ul>
+              </div>
+          </header>
+
+          <!-- ------------ Fin wizard ------------ -->
+
+<div class="wrapper">
+          <!-- ------------ Sidebar ------------ -->
+
+              <div [formGroup]="formFiltros" class="col-4 sidebar">
+                <div class="card">
+                  <div class="card-body deducible">
+                    <h5 class="card-title text-uppercase">deducible</h5>
+
+                    <nav aria-label="...">
+                      <ul class="pagination">
+                        <div formArrayName="filtroDeducibles" *ngFor="let item of deducibles;let i = index">
+                            <input [formControlName]="i" type="checkbox" id="deducible-{{i}}"/>
+                            <label class="btn" for="deducible-{{i}}">{{item}}</label>
+                        </div>
+                      </ul>
+                    </nav>
+                  </div>
+
+                  <div class="card-body">
+                    <h5 class="card-title text-uppercase">cobertura</h5>
+
+                    <nav aria-label="...">
+                      <ul class="pagination pagination-sm cobertura">
+                        <input type="checkbox" id="cobertura-basica" />
+                        <label class="btn" for="cobertura-basica">Básica</label>
+                        <!-- input type="checkbox" id="cobertura-media" />
+                        <label class="btn" for="cobertura-media">Madia</label -->
+                        <input type="checkbox" id="cobertura-completa" />
+                        <label class="btn" for="cobertura-completa">Completa</label>
+                      </ul>
+                    </nav>
+                  </div>
+
+                  <div class="card-body">
+                    <h5 class="card-title text-uppercase">valor cuota</h5>
+                    $<span id="demo">250.000</span>
+                    <div class="slidecontainer">
+                      <input  formControlName="filtroRangoPrecios" type="range" min="0" max="250000" step="1" value="250000" class="slider" id="myRange"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="card-body">
+                    <h5 class="card-title text-uppercase">aseguradoras</h5>
+                    <nav aria-label="...">
+                      <ul class="pagination pagination-sm aseguradora">
+                        <div formArrayName="filtroAseguradoras" *ngFor="let item of aseguradoras;let i = index">
+                            <input [formControlName]="i"  type="checkbox" id="aseguradora-{{i}}"/>
+                            <label class="btn" for="aseguradora-{{i}}">{{item}}</label>
+                        </div>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+
+          <!-- ------------ Fin Sidebar ------------ -->
+
+          <!-- ------------ Tarjetas ------------ -->
+
+        <div class="col-8 tarjetas">
+                <div *ngFor="let item of ofertasFiltradas" class="card">
+                  <div class="card-body imagen">
+                    <figure>
+                      <img src="{{item.aseguradora.imagenRuta}}" />
+                    </figure>
+                  </div>
+                  <div class="card-body detalles">
+                    <div class="detallesWrapper">
+                      <div class="coberturaMedia">
+                        <p class="card-text">Cobertura media</p>
+                        <div class="progress">
+                          <div
+                            class="progress-bar"
+                            role="progressbar"
+                            style="width: 75%"
+                            aria-valuenow="75"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                          ></div>
+                        </div>
+                      </div>
+                      <div class="respCivil">
+                        <p class="card-text">Responsabilidad civil</p>
+                        <div class="progress">
+                          <div
+                            class="progress-bar"
+                            role="progressbar"
+                            style="width: 75%"
+                            aria-valuenow="75"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                    <a href="#" class="btn boton">Ver Detalle</a>
+                  </div>
+                  <div class="card-body cuotas">
+                    <p class="card-text">{{ item.nroCuotas }} cuotas de</p>
+                    <h5 class="card-title">${{ item.valorCuota }}</h5>
+                    <a href="./cotizacion" class="btn btn-primary text-uppercase">contratar</a>
+                  </div>
+                </div>
+              </div>
+          <!-- ------------ Fin Tarjetas ------------ -->
+          </div>
+      </article>
+
+</div>
+
+
+<!-- Modal Salir -->
+  <app-modal-salir></app-modal-salir>
+</body>

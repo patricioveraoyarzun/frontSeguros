@@ -1,0 +1,314 @@
+*, *:after, *:before {
+  box-sizing: inherit;
+}
+
+header {
+  background-color: #ffffff;
+  padding-top: 80px;
+  border-bottom: 1px solid rgba(221,221,221,0.7);
+  position: relative;
+}
+
+.wizard {
+  padding-top: 4rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.wizard-elemento {
+  flex: 1;
+  text-align: center;
+  align-self: center;
+  align-self: flex-end;
+}
+
+.negrita {
+  font-family: IsidoraSans-Bold !important;
+}
+
+.rojo {
+  color: #CA195B;
+}
+
+.gris {
+  color: #999999;
+}
+
+.auto {
+  margin-top: 70px;
+  background: #ffffff;
+}
+
+.container {
+  max-width: 900px;
+  padding-top: 21px;
+}
+
+.tarjeta {
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1);
+  padding: 50px 70px 30px 70px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.auto .custom-select {
+  color: #999999;
+  background-image: none;
+  border-color: #999999;
+}
+
+.btnRojo {
+  background-color: #CA195B;
+  color: #ffffff;
+  height: 41px;
+  font-size: 1rem;
+}
+
+
+/*-----------------------------------------------------------------------*/
+.progressbar {
+counter-reset: step;
+  padding: 0;
+}
+.progressbar li{
+  list-style-type: none;
+  float: left;
+  width: 33.33%;
+  position:relative;
+  text-align: center;
+  bottom: -11px;
+}
+.progressbar li:before {
+/* CSS for creating steper block before the li item*/
+  content:'';
+  counter-increment: step;
+  height:11px;
+  width:11px;
+  line-height: 30px;
+  border: 2px solid #ddd;
+  display:block;
+  text-align: center;
+  margin: 0 auto 10px auto;
+  border-radius: 50%;
+  background-color: #ddd;
+}
+.progressbar li:after {
+/* CSS for creating horizontal line*/
+  content:'';
+  position: absolute;
+  width:100%;
+  height:2px;
+  background-color: #ddd;
+  top: 5px;
+  left: -50%;
+}
+.progressbar li:first-child:after {
+  content:none;
+}
+.progressbar li.active {
+  color:#CA195B;
+  z-index: 10;
+}
+.progressbar li.active:before {
+  border-color: #CA195B;
+  background-color: #CA195B;
+}
+.progressbar li.active:after{
+  background-color: #CA195B;
+}
+
+
+/* Segunda Pantalla */
+
+.checkbox label input[type=checkbox]:checked+.checkbox-decorator .check, label.checkbox-inline input[type=checkbox]:checked+.checkbox-decorator .check {
+  color: #CA195B;
+  border-color: #CA195B;
+}
+.checkbox label input[type=checkbox]:checked+.checkbox-decorator .check:before, label.checkbox-inline input[type=checkbox]:checked+.checkbox-decorator .check:before {
+  color: #CA195B;
+}
+
+/* Fin Segunda Pantalla */
+
+
+
+
+/**
+* Mobile y pequeñas tablets
+*/
+@media (max-width: 768px) {
+/*@media (max-width: 414px) {*/
+  header {
+      padding-top: 2rem;
+  }
+
+  .wizard {
+      padding-top: 2rem;
+  }
+
+  .auto {
+      padding-left: 1rem;
+      padding-right: 1rem;
+  }
+
+  .container {
+      padding-left: 0;
+      padding-right: 0;
+  }
+}
+
+/****************************************************************************/
+body {
+  font-family: IsidoraSans-Regular !important;
+/*    background: #FCFCFC;*/
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.fondoGris {
+  background: #FCFCFC;
+}
+
+.principal {
+  display: flex;
+  flex: 1;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:after, *:before {
+  box-sizing: inherit;
+}
+
+header {
+  background: #ffffff;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(221,221,221,0.7);
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+aside {
+  padding-top: 5rem;
+  background: #626161;
+  width: 70px;
+  height: 100%;
+}
+
+.logo {
+  padding-left: 15px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.logo img {
+  width: 120px;
+}
+.icono {
+  min-width: 30px;
+  text-align: center;
+}
+.icono img {
+  max-height: 27px;
+}
+
+.texto {
+  color: #C4C2C2;
+  font-size: 1.2rem;
+}
+
+/*Menu horizontal*/
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  padding: 15px;
+  padding-left: 5px;
+}
+nav ul a:hover {
+  text-decoration: none;
+}
+.menu-horizontal ul {
+  display: flex;
+  justify-content: flex-end;
+}
+.menu-horizontal ul li {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+.menu-horizontal img {
+  width: 65%;
+}
+.menu-horizontal ul li a{
+  margin-bottom: 0;
+}
+
+.menu-vertical ul li a {
+  display: flex;
+  justify-content: space-between;
+  width: 60px;
+  padding: 10px 25px 10px 15px;
+  border-radius: 10px;
+  position: relative;
+}
+.menu-vertical .texto {
+  display: none;
+  color: #000000;
+  position: absolute;
+  left: 55px;
+  font-family: IsidoraSans-Medium;
+}
+
+.menu-vertical ul li a:hover{
+  background: #CA195B;
+  width: 150px;
+}
+
+.rojo {
+  color: #CA195B;
+}
+
+.gris {
+  color: #C4C2C2;
+}
+
+/*------------------------------------------------------------------------------------*/
+
+/**
+* Mobile y pequeñas tablets
+*/
+@media (max-width: 768px) {
+/*@media (max-width: 414px) {*/
+  .logo {
+      padding-left: 0;
+  }
+  .menu-horizontal ul li {
+      padding: 0 7px;
+  }
+  .menu-horizontal ul li:last-child {
+      padding-right: 0;
+  }
+
+  .container {
+      padding-left: 0;
+      padding-right: 0;
+  }
+
+  aside {
+      padding-top: 2rem;
+  }
+
+}
+
+
+

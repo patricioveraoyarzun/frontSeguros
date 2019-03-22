@@ -1,0 +1,198 @@
+<body class="fondoGris">
+
+
+  <header class="container-fluid dashboard-mps">
+    <div class="logo"><img src="assets/images/logo.png" class="img-fluid"></div>
+
+    <app-menu-horizontal></app-menu-horizontal>
+  </header>
+
+
+  <!-- ------------ Principal ------------ -->
+  <div class="principal dashboard-mps">
+
+    <!-- ------------ Menu lateral ------------ -->
+
+    <app-menu-vertical></app-menu-vertical>
+
+    <!-- ------------ Tarjetas ------------ -->
+    <article class="">
+
+      <div class="container mensaje">
+        <h1 class="negrita rojo">Confirmación de datos de seguro</h1>
+      </div>
+
+      <!-- ------------ Formulario ------------ -->
+
+      <div class="container">
+        <div class="auto tarjeta">
+          <form class="mt-3" action="tercera.html" novalidate>
+            <div class="row">
+              <div class="col-4">
+                <p class="parrafoFormulario">Aseguradora </p>
+              </div>
+              <div class="col-8">
+                <a href="#" class="rojo">Renta Nacional</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4">
+                <p class="parrafoFormulario">Deducible</p>
+              </div>
+              <div class="col-8">
+                <a href="#" class="rojo">UF 10 (Auto Plus)</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4">
+                <p class="parrafoFormulario">Costo Mensual</p>
+              </div>
+              <div class="col-8">
+                <a href="#" class="rojo">$24.000 (22.02 UF anual)</a>
+              </div>
+            </div>
+
+            <h3 class="rojo">Vehículo a asegurar</h3>
+            <div class="row">
+              <div class="col-4">
+                <p class="parrafoFormulario">Vehículo</p>
+              </div>
+              <div class="col-8">
+                <p class="gris">Toyota 4 Runner</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4">
+                <p class="parrafoFormulario">Vehículo prenda</p>
+              </div>
+              <div class="col-8">
+                <p class="gris">No</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4">
+                <p class="parrafoFormulario">Motor</p>
+              </div>
+              <div class="col-8">
+                <p class="gris">123</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4">
+                <p class="parrafoFormulario">chasis</p>
+              </div>
+              <div class="col-8">
+                <p class="gris">123</p>
+              </div>
+            </div>
+
+            <h3 class="rojo">Condición del vehículo</h3>
+            <div class="row">
+              <div class="col-5">
+                <p class="parrafoFormulario">Tu vehículo es</p>
+              </div>
+              <div class="col-7">
+                <p class="gris">Nuevo</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-5">
+                <p class="parrafoFormulario">Fecha de Factura/Guía</p>
+              </div>
+              <div class="col-7">
+                <p class="gris">21/02/2019</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-5">
+                <p class="parrafoFormulario">Número de Factura/Guía</p>
+              </div>
+              <div class="col-7">
+                <p class="gris">123</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-5">
+                <p class="parrafoFormulario">Factura/Guía adjunta</p>
+              </div>
+              <div class="col-7">
+                <a href="#" class="rojo">Ver Factura</a>
+              </div>
+            </div>
+
+            <h3 class="rojo">Propietario del vehículo</h3>
+            <div class="row">
+              <div class="col-5">
+                <p class="parrafoFormulario">RUT</p>
+              </div>
+              <div class="col-7">
+                <p class="gris">1234567</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-5">
+                <p class="parrafoFormulario">Nombre</p>
+              </div>
+              <div class="col-7">
+                <p class="gris">Ramiro Gallo</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-5">
+                <p class="parrafoFormulario">Celular</p>
+              </div>
+              <div class="col-7">
+                <p class="gris">1234567</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-5">
+                <p class="parrafoFormulario">Mail</p>
+              </div>
+              <div class="col-7">
+                <p class="gris">ejemplo@gmail.com</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-5">
+                <p class="parrafoFormulario">Dirección</p>
+              </div>
+              <div class="col-7">
+                <p class="gris">abc 123</p>
+              </div>
+            </div>
+
+            <h3 class="rojo">Pagador del seguro</h3>
+            <div class="row">
+              <div class="col-5">
+                <p class="parrafoFormulario">Pagador</p>
+              </div>
+              <div class="col-7">
+                <p class="gris">Propietario del vehículo</p>
+              </div>
+            </div>
+
+            <h3 class="rojo">Forma de Pago</h3>
+            <div class="row">
+              <div class="col-5">
+                <p class="parrafoFormulario">Forma de Pago</p>
+              </div>
+              <div class="col-7">
+                <p class="gris">Aviso de vencimiento</p>
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-block btnRojo mt-5 uppercase" (click)="onSubmit()">$ pagar seguro</button>
+            <button type="button" class="btn btn-block btnGris uppercase" (click)="volver()">volver</button>
+          </form>
+        </div>
+
+      </div>
+    </article>
+
+  </div>
+
+
+  <app-modal-salir></app-modal-salir>
+
+</body>

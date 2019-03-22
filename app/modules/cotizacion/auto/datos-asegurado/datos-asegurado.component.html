@@ -1,0 +1,176 @@
+<body class="fondoGris">
+
+
+  <header class="container-fluid">
+      <div class="logo"><img src="assets/images/logo.png" class="img-fluid"></div>
+
+     <app-menu-horizontal></app-menu-horizontal>
+  </header>
+
+
+  <!-- ------------ Principal ------------ -->
+  <div class="principal">
+
+      <app-menu-vertical></app-menu-vertical>
+
+      <!-- ------------ Tarjetas ------------ -->
+      <div class="container">
+        <h1 class="negrita rojo">Cotiza tu Seguro Automotriz</h1>
+        <span class="h1 rojo">en tres simples pasos.</span>
+        <div class="wizard">
+          <div class="wizard-elemento rojo">DATOS DEL AUTO</div>
+          <div class="wizard-elemento rojo">DATOS DEL ASEGURADO</div>
+          <div class="wizard-elemento gris">OBTENER OFERTAS</div>
+        </div>
+
+        <ul class="progressbar">
+          <li class="active"></li>
+          <li class="active"></li>
+          <li class=""></li>
+        </ul>
+
+
+        <div class="auto tarjeta">
+          <form class="mt-3" novalidate [formGroup]="form">
+            <h4 class="mb-3 rojo">Sobre el auto que quieres asegurar...</h4>
+
+            <div class="form-row">
+              <div class="my-1 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <label class="mr-sm-2" for="slMarca">Marca</label>
+                <select formControlName="marcas" class="custom-select mr-sm-2" id="slMarca" required (change)="onChangeMarcasAutos($event.target.value)">
+                  <option [value]="0">Seleccionar...</option>
+                  <option *ngFor="let marcas of marcasAuto" [value]="marcas.id">{{marcas.nombre}}</option>
+                </select>
+              </div>
+              <div class="my-1 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <label class="mr-sm-2" for="slModelo">Modelo</label>
+                <select formControlName="modelos" class="custom-select mr-sm-2" id="slModelo" required>
+                  <option [value]="0">Seleccionar...</option>
+                  <option *ngFor="let modelo of modelosAuto" [value]="modelo.id">{{modelo.nombre}}</option>
+                </select>
+              </div>
+              <div class="my-1 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <label class="mr-sm-2" for="slAnio">Año</label>
+                <select formControlName="anios" class="custom-select mr-sm-2" id="slAnio" required>
+                  <option [value]="0">Seleccionar...</option>
+                  <option *ngFor="let anio of anios" [value]="anio.id">{{anio.nombre}}</option>
+                </select>
+              </div>
+            </div>
+
+            <h4 class="mb-3 mt-5 rojo">Sobre el dueño del auto...</h4>
+
+            <div formGroupName="asegurado">
+              <div class="checkbox">
+                <label>
+                  <input
+                    type="checkbox"
+                    id="checkboxSoyElAsegurado"
+                    value=""
+                    onchange=""
+                    checked
+                  />
+                  Soy el asegurado
+                </label>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-sm-6 col-md-4">
+                  <label for="inputRut">RUT</label>
+                  <input formatRut formControlName="rut" type="text" class="form-control" id="inputRut" required />
+                  <div *ngIf="isControlInvalid('asegurado.rut')  && isRequiredValidatorError('asegurado.rut')" class="mps-invalid-feedback">
+                    Por favor ingrese RUT
+                  </div>
+                  <div *ngIf="isControlInvalid('asegurado.rut') && isRutValidatorError('asegurado.rut')" class="mps-invalid-feedback">
+                    Rut inválido.
+                  </div>
+                </div>
+                <button class="btn btnRojo mt-4 col-sm-6 col-md-4 mt-4">
+                  Continuar
+                </button>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-sm-6 col-md-4">
+                  <label for="inputNombres">Nombres</label>
+                  <input formControlName="nombre" type="text" class="form-control" id="inputNombres" required />
+                  <div *ngIf="isControlInvalid('asegurado.nombre')" class="mps-invalid-feedback">Por favor ingrese Nombre</div>
+                </div>
+                <div class="form-group col-sm-6 col-md-4">
+                  <label for="inputApellido">Apellido</label>
+                  <input formControlName="apellido" type="text" class="form-control" id="inputApellido" required />
+                  <div *ngIf="isControlInvalid('asegurado.apellido')" class="mps-invalid-feedback">Por favor ingrese Apellido</div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                  <label class="mr-sm-2" for="slSexo">Sexo</label>
+                  <select formControlName="sexo" class="custom-select mr-sm-2" id="slSexo" required>
+                    <option value="0">Seleccionar...</option>
+                    <option value="1">Masculino</option>
+                    <option value="2">Femenino</option>
+                  </select>
+                  <div *ngIf="isControlInvalid('asegurado.sexo')" class="mps-invalid-feedback">Por favor ingrese Sexo</div>
+                </div>
+                <div class="form-group col-sm-6 col-md-4">
+                  <label for="inputFechaDeNacimiento">Fecha de Nacimiento</label>
+                  <input formControlName="fechaNacimiento" type="text" class="form-control" id="inputFechaDeNacimiento" required/>
+                  <div *ngIf="isControlInvalid('asegurado.fechaNacimiento')" class="mps-invalid-feedback">Por favor ingrese Fecha de Nacimiento</div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                  <label class="mr-sm-2" for="slRegion">Región</label>
+                  <select formControlName="region" class="custom-select mr-sm-2" id="slRegion" required (change)='onRegionChange($event.target.value)'>
+                    <option [value]="0">Seleccionar...</option>
+                    <option *ngFor="let region of regiones" [value]="region.id">{{region.nombre}}</option>
+                  </select>
+                  <div *ngIf="isControlInvalid('asegurado.region')" class="mps-invalid-feedback">Por favor seleccione Región</div>
+                </div>
+                <div class="form-group col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                  <label class="mr-sm-2" for="slComuna">Comuna</label>
+                  <select formControlName="comuna" class="custom-select mr-sm-2" id="slComuna" required>
+                    <option [value]="0">Seleccionar...</option>
+                    <option *ngFor="let comuna of comunas" [value]="comuna.id">{{comuna.nombre}}</option>
+                  </select>
+                  <div *ngIf="isControlInvalid('asegurado.comuna')" class="mps-invalid-feedback">Por favor seleccione Comuna</div>
+                </div>
+              </div>
+
+              <div class="form-row mb-3">
+                <div class="form-group col-sm-6 col-md-4">
+                  <label for="inputCorreo">Correo</label>
+                  <input formControlName="email" type="text" class="form-control" id="inputCorreo" required />
+                  <div *ngIf="isControlInvalid('asegurado.email')" class="mps-invalid-feedback">Por favor ingrese Correo.</div>
+                </div>
+                <div class="form-group col-sm-6 col-md-4">
+                  <label for="inputCelular">Celular</label>
+                  <input formControlName="celular" type="text" class="form-control" id="inputCelular" required />
+                  <div *ngIf="isControlInvalid('asegurado.celular')" class="mps-invalid-feedback">Por favor ingrese Celular.</div>
+                </div>
+              </div>
+
+              <div class="checkbox">
+                <label>
+                  <input formControlName="esPropietario" type="checkbox" id="checkboxEsPropietario" />
+                  Es propietario
+                </label>
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-block btnRojo mt-4" (click)="onSubmit()">
+              Ver Precios
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+</div>
+
+
+<app-modal-salir></app-modal-salir>
+
+</body>
