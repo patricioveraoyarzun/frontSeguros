@@ -1,0 +1,89 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: IsidoraSans-Medium;
+
+  src: url(assets/fonts/IsidoraSans/IsidoraSans-Medium.ttf) format('truetype');
+  src: url(assets/fonts/IsidoraSans/IsidoraSans-Medium.otf) format('opentype');
+}
+
+@font-face {
+  font-family: IsidoraSans-Bold;
+
+  src: url(assets/fonts/IsidoraSans/IsidoraSans-Bold.ttf) format('truetype');
+  src: url(assets/fonts/IsidoraSans/IsidoraSans-Bold.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'isidora sans';
+  src: url(assets/fonts/IsidoraSans/IsidoraSans-Regular.otf),
+  	   url(assets/fonts/IsidoraSans/IsidoraSans-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'isidora sans bold';
+  src: url(assets/fonts/IsidoraSans/IsidoraSans-Bold.otf),
+  	   url(assets/fonts/IsidoraSans/IsidoraSans-Bold.ttf) format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'isidora sans semi bold';
+  src: url(assets/fonts/IsidoraSans/IsidoraSansAlt-SemiBold.otf),
+  	   url(assets/fonts/IsidoraSans/IsidoraSansAlt-SemiBold.ttf) format('truetype');
+  font-weight: bold;
+}
+
+
+@font-face {
+  font-family: IsidoraSans-SemiBold;
+
+  src: url(assets/fonts/IsidoraSans/IsidoraSans-SemiBold.ttf) format('truetype');
+  src: url(assets/fonts/IsidoraSans/IsidoraSans-SemiBold.otf) format('opentype');
+}
+
+
+@font-face {
+  font-family: IsidoraSans-Regular;
+
+  src: url(assets/fonts/IsidoraSans/IsidoraSans-Regular.ttf) format('truetype');
+  src: url(assets/fonts/IsidoraSans/IsidoraSans-Regular.otf) format('opentype');
+}
+
+
+@font-face {
+  font-family: IsidoraSans-Medium;
+
+  src: url(assets/fonts/IsidoraSans/IsidoraSans-Medium.ttf) format('truetype');
+  src: url(assets/fonts/IsidoraSans/IsidoraSans-Medium.otf) format('opentype');
+}
+
+
+body {
+  font-family: IsidoraSans-Medium !important;
+  background: #F6F6F6;
+  line-height: 1.8rem !important;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+
+/* Segunda Pantalla */
+
+.checkbox label input[type=checkbox]:checked+.checkbox-decorator .check, label.checkbox-inline input[type=checkbox]:checked+.checkbox-decorator .check {
+  color: #CA195B;
+  border-color: #CA195B;
+}
+.checkbox label input[type=checkbox]:checked+.checkbox-decorator .check:before, label.checkbox-inline input[type=checkbox]:checked+.checkbox-decorator .check:before {
+  color: #CA195B;
+}
+
+/* Fin Segunda Pantalla */
+
+.mps-invalid-feedback {
+  width: 100%;
+  margin-top: .25rem;
+  font-size: .75rem;
+  color: #f44336;
+}
